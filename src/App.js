@@ -20,7 +20,7 @@ function App() {
 
   useEffect(() => {
     const fetchWeatherData = async () => {
-      const data = await getDatagit();
+      const data = await getData();
       // setWeather(data);
       console.log(data);
      
