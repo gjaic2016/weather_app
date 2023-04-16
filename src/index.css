@@ -1,5 +1,6 @@
 :root {
   --temp-background: rgba(0, 0, 0, 0.7);
+  --card-background: rgba(53, 53, 53, 0.575);
   --bg-overlay: rgba(0, 0, 0, 0.5)
 }
 
@@ -117,7 +118,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--temp-background);
+  background-color: var(--card-background);
   /* border: 3px solid yellow; */
 }
 
@@ -159,4 +160,26 @@ ul {
   width: 100%;
   list-style: none;
   padding: 0 0.25rem 0.25rem;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.icon>h3 {
+  font-size: 22px;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+
+.iconWeather{
+  height: 70px;
+  width: 70px;
+}
+
+.temperature>h1 {
+  font-size: 60px;
 }

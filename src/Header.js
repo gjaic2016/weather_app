@@ -4,8 +4,8 @@ import SearchCity from "./SearchCity";
 const Header = () => {
   return (
     <header className="app-header">
-      WEATHER
-      <SearchCity />
+      WEATHER FORECAST
+      {/* <SearchCity /> */}
     </header>
   );
 };
