@@ -19,7 +19,9 @@ const getData = async (city, units = "metric") => {
 
   const { description, icon } = weather[0];
   
-//   console.log(data);
+  console.log(data);
+
+
   return {
     temp, 
     description, 
@@ -31,3 +33,17 @@ const getData = async (city, units = "metric") => {
 };
 
 export { getData };
+
+
+
+const getForecastData = async (city) => {  
+  const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`;
+  // const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=zagreb&appid=d1739a6b892148c0bfec5c19a8245d1a`;
+
+   const forecastData = await fetch(forecastURL)
+  .then((res) => res.json())
+  // .then((forecastData) = forecastData);
+    console.log(forecastData);
+}
+
+export { getForecastData };
