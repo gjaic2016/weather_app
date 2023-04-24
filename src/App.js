@@ -11,48 +11,41 @@ function App() {
   const bckgrndImage = "https://wallpaperaccess.com/full/1540016.jpg";
   const [weather, setWeather] = useState();
   const [city, setCity] = useState("");
-  const [forecast, setForecast] = useState();
+  // const [dailytemp, setDailyTemp] = useState();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await getData(city);
-      setWeather(data);
-      console.log(data);
+    let didCancel = false;
+    if (!didCancel) {
+      const fetchData = async () => {
+        const data = await getData(city);
+        setWeather(data);
+        console.log("SORTED DATA" + JSON.stringify(data)); //clean data
+      };
+      fetchData().catch(console.error);
+    }
+    return () => {
+      didCancel = true;
     };
-    fetchData().catch(console.error);
-
-    const fetchForecastData = async () => {
-      const forecastData = await getForecastData(city);
-      // setForecast(forecastData);
-      console.log(forecastData);
-    };
-    fetchForecastData();
   }, [city]);
 
   const userEntry = (e) => {
-    console.log("inside userEntry");
+    // console.log("inside userEntry");
     if (e.keyCode === 13) {
       setCity(e.currentTarget.value);
     }
   };
 
-  const userSearch = (e) => {
-    e.preventDefault();
-    console.log("inside userSearch");
-    console.log(e.currentTarget.value);
-
-    setCity(e.currentTarget.value);
-  };
-
   return (
-    <div className="app" style={{ backgroundImage: `url(${bckgrndImage})` }}>
+    <div className="app" 
+    // style={{ backgroundImage: `url(${bckgrndImage})` }}
+    >
       <div className="overlay">
         <Header />
-        <SearchCity userEntry={userEntry} userSearch={userSearch} />
+        <SearchCity userEntry={userEntry} />
         <Router>
           <Switch>
             <Route path="/weekforecast">
-              <WeekForecast />
+              <WeekForecast daily={weather} />
             </Route>
             <Route path="/todayforecast">
               <TodayForecast />

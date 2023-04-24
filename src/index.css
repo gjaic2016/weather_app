@@ -26,6 +26,12 @@ code {
 }
 
 .app {
+  background-image: url(https://wallpaperaccess.com/full/1540016.jpg);
+  background-position: center;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+  
   text-align: center;
   /* background-color: #282c34; */
   /* color: white; */
@@ -34,11 +40,10 @@ code {
   justify-content: flex-start;
   align-items: center;
   height: 100vh; 
-  width: 100%; 
-  background-position: center;
-  background-size: cover;
+  width: 100vw; 
   border: 1px solid mediumblue;
   margin: auto;
+  /* z-index: -1; */
 }
 
 .overlay {
@@ -120,7 +125,7 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--card-background);
+  /* background-color: var(--card-background); */
   /* border: 3px solid yellow; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -131,7 +136,7 @@ code {
 
 .week_section {
   /* max-width: 80%; */
-  max-width: 90vw;
+  max-width: 95vw;
   margin: auto;
   /* max-height: 50%; */
   min-height: 50vh;
@@ -140,7 +145,7 @@ code {
   align-items: center;
   justify-content: space-between;
   /* flex-direction: column; */
-  padding: 1rem;
+  padding: 0.5rem;
   /* border: 3px solid yellow; */
   
 }
@@ -160,7 +165,7 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--temp-background);
+  /* background-color: var(--temp-background); */
 }
 
 /* @media (min-width:1024px) {
@@ -211,4 +216,10 @@ ul {
 .goBackButton:hover{
   color:aquamarine;
   cursor: pointer;
+}
+
+.map {
+  height: 400px;
+  width: 90rem;
+  margin: 2em ;
 }
