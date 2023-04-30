@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchItem = ({ userEntry, userSearch }) => {
+const SearchItem = ({ userEntry}) => {
   return (
     <form className="searchForm" onSubmit={(e) => e.preventDefault()}>
       <input

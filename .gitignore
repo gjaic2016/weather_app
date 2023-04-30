@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/clipboard.js
+src/service2.js
+src/service3.js
+src/service4.js
