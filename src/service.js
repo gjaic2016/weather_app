@@ -23,20 +23,11 @@ const getData = async (city, units = "metric") => {
   const { description, icon } = weather[0];
   const { lat, lon } = coord;
 
-  console.log("coord " + JSON.stringify(coord));
-  
-  console.log("Fetched weather data",  data);
-  console.log("deconstruct latitude" + lat + " and longitude " + lon);
-  
   const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-  
-  console.log("forecast url - - -" + forecastURL)
-
+ 
   const forecastData = await fetch(forecastURL)
   .then((res) => res.json())
   .then((forecastDataRes) => forecastDataRes);
-
-  console.log("returned uncleaned forecast data" + JSON.stringify(forecastData));
 
   const {list} = forecastData;
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 const Main = ({ weather }) => {
   return weather ? (
     <main className="main_section">
@@ -13,19 +12,25 @@ const Main = ({ weather }) => {
             </h3>
             <h3>{weather.description}</h3>
           </div>
-            <img
-              className="iconWeather"
-              src={weather.iconURL}
-              alt="weatherIcon"
-            />
+          <img
+            className="iconWeather"
+            src={weather.iconURL}
+            alt="weatherIcon"
+          />
           <div className="temperature">
-            <h1>{weather.temp.toFixed()}°C</h1>
+            <h1>{weather.temp?.toFixed()}°C</h1>
           </div>
         </div>
       </Link>
     </main>
   ) : (
-    "Enter city in search field."
+    <main className="main_section">
+      <div className="section">
+        <div className="icon">
+          <h3>Enter city in search field.</h3>
+        </div>
+      </div>
+    </main>
   );
 };
 
