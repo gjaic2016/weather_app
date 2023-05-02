@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import { iconURLBuilder } from "./service2";
+import { iconURLBuilder } from "./service";
 import { formatToLocalDate, getDayName } from "./helper";
 
 const WeekForecast = ({ weather, filterOutSelectedForecast }) => {
