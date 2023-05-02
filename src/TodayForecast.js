@@ -33,7 +33,7 @@ const TodayForecast = ({ hourForecast }) => {
   };
 
   const options = {
-    hAxis: { title: "Hour"  },
+    hAxis: { title: "Hour(h)"  },
     vAxis: { title: "Temperature(°C)" },
     chart: {
       title: "Hourly forecast",

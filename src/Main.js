@@ -1,6 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaTemperatureHigh, FaTemperatureLow, FaWind, FaTint, FaTachometerAlt, FaWaveSquare} from "react-icons/fa";
+import {
+  FaTemperatureHigh,
+  FaTemperatureLow,
+  FaWind,
+  FaTint,
+  FaTachometerAlt,
+  FaWaveSquare,
+} from "react-icons/fa";
 
 const Main = ({ weather }) => {
   return weather ? (
@@ -24,20 +31,36 @@ const Main = ({ weather }) => {
         </div>
       </Link>
       <div className="section_additionaldata">
-        
-        <FaTemperatureLow className="faicons" ></FaTemperatureLow>
-          <h4>Min. temp: {weather.temp_min.toFixed()}°C</h4>
-        <FaTemperatureHigh className="faicons" ></FaTemperatureHigh>
-          <h4>Max. temp: {weather.temp_max.toFixed()}°C</h4>
-        <FaWind className="faicons" ></FaWind>
-          <h4>Wind speed: {weather.speed} km/h</h4>
-        <FaWaveSquare className="faicons" ></FaWaveSquare>
-          <h4>Feels like: {weather.feels_like}</h4>
-        <FaTachometerAlt className="faicons" ></FaTachometerAlt>
-          <h4>Pressure: {weather.pressure} Pa</h4>
-        <FaTint className="faicons" ></FaTint>
-          <h4>Humidity: {weather.humidity}</h4>
-        
+        <div className="section_additionaldata_col">
+          <div className="section_additionaldata_icon">
+            <FaTemperatureLow className="faicons"></FaTemperatureLow>
+            <h4>Min. temp: {weather.temp_min.toFixed()}°C</h4>
+          </div>
+          <div className="section_additionaldata_icon">
+            <FaTemperatureHigh className="faicons"></FaTemperatureHigh>
+            <h4>Max. temp: {weather.temp_max.toFixed()}°C</h4>
+          </div>
+        </div>
+        <div className="section_additionaldata_col">
+          <div className="section_additionaldata_icon">
+            <FaWind className="faicons"></FaWind>
+            <h4>Wind speed: {weather.speed} km/h</h4>
+          </div>
+          <div className="section_additionaldata_icon">
+            <FaWaveSquare className="faicons"></FaWaveSquare>
+            <h4>Feels like: {weather.feels_like}°C</h4>
+          </div>
+        </div>
+        <div className="section_additionaldata_col">
+          <div className="section_additionaldata_icon">
+            <FaTachometerAlt className="faicons"></FaTachometerAlt>
+            <h4>Pressure: {weather.pressure} Pa</h4>
+          </div>
+          <div className="section_additionaldata_icon">
+            <FaTint className="faicons"></FaTint>
+            <h4>Humidity: {weather.humidity}%</h4>
+          </div>
+        </div>
       </div>
     </main>
   ) : (

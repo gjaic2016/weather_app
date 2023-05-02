@@ -153,12 +153,29 @@ code {
   border-radius: 0.6rem;
   color: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  /* box-shadow: var(--section-box-shadow-dark); */
+  justify-content: space-between;
+  box-shadow: var(--section-box-shadow-dark);
 
 }
 
+@media (max-width: 720px) {
+  .section_additionaldata{
+    flex-direction: column;
+  }
+}
+
+.section_additionaldata_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 15px 15px 15px 15px; */
+}
+
+.section_additionaldata_icon {
+  padding: 10px;
+}
 
 .temperature>h1 {
   font-size: 3em;
@@ -176,6 +193,12 @@ code {
   padding: 0.5rem;
 }
 
+@media (max-width: 720px) {
+  .week_section{
+    flex-direction: column;
+  }
+}
+
 .week_section_size {
   width: 100%;
   height: 45vh;
@@ -184,6 +207,12 @@ code {
   color: white;
   margin: 1rem;
   box-shadow: var(--section-box-shadow-dark);
+}
+
+@media (max-width: 720px) {
+  .week_section_size{
+    height: 25vh;
+  }
 }
 
 .week_section_size:hover{
@@ -214,7 +243,6 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .icon>h3 {
@@ -268,6 +296,14 @@ ul {
   box-shadow: var(--section-box-shadow-dark);
 }
 
+@media (max-width: 720px) {
+  .map{
+    height: 400px;
+    width: 35rem;
+    margin: 1em;
+  }
+}
+
 button, input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
@@ -284,7 +320,8 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .reactgoogleChart:hover{
-  box-shadow: var(--section-box-shadow-hover);
+  background-color: red;
+  /* box-shadow: var(--section-box-shadow-hover); */
 }
 
 

@@ -31,10 +31,11 @@ function App() {
     }
   };
 
-  // const searchOnClick = (value) => {
-  //   console.log(value);
-  //   setCity(value);
-  // }
+  const searchOnClick = (e) => {
+    // console.log("search onclick value" + JSON.stringify(value));
+    console.log("search onclick value" + e);
+    setCity(e);
+  }
 
   const filterOutSelectedForecast = (selectedDate) => {
     let filteredDateHours = weather.list.filter((item) =>
@@ -54,7 +55,7 @@ function App() {
     <div className="app">
       <div className="overlay">
         <Header />
-        <SearchCity userEntry={userEntry} />
+        <SearchCity userEntry={userEntry} searchOnClick={searchOnClick} />
         <Router>
           <Switch>
             <Route path="/weekforecast">
