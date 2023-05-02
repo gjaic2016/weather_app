@@ -75,8 +75,26 @@ code {
   flex-direction: column;
 } */
 
+.searchDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchButton{
+  color: white;
+  height: 20px;
+  width: 20px;
+}
+
+.searchButton:hover{
+  color:aquamarine;
+  cursor: pointer;
+}
+
 .searchForm {
-  width: 100%;
+  width: 40%;
   margin: 0.25rem 0 0;
   padding: 0 0.5rem 0.25rem;
 }
@@ -113,7 +131,7 @@ code {
   padding: 1rem;
   border-radius: 0.6rem;
   color: white;
-  
+  margin-bottom: 1rem;
 }
 
 .section_temperature {
@@ -126,6 +144,21 @@ code {
 .section_temperature:hover{
   box-shadow: var(--section-box-shadow-hover);
 }
+
+.section_additionaldata {
+  width: 95%;
+  height: auto;
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 0.6rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* box-shadow: var(--section-box-shadow-dark); */
+
+}
+
 
 .temperature>h1 {
   font-size: 3em;
@@ -243,4 +276,24 @@ button, input[type="submit"], input[type="reset"] {
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+}
+
+.reactgoogleChart{
+  border-radius: 20px;
+  box-shadow: var(--section-box-shadow-dark);
+}
+
+.reactgoogleChart:hover{
+  box-shadow: var(--section-box-shadow-hover);
+}
+
+
+.faicons{
+  /* color: white; */
+  height: 30px;
+  width: 30px;
+}
+
+.faicon_hover:hover{
+  font-size: 22px;
 }
