@@ -49,9 +49,9 @@ const WeekForecast = ({ weather, filterOutSelectedForecast }) => {
             );
           })}
         </div>
-        <div className="section_week">
+        {/* <div className="section_week">
           <iframe className="map" src={mapUrl} title="Map"></iframe>
-        </div>
+        </div> */}
       </main>
     </>
   );
