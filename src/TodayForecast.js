@@ -2,7 +2,7 @@ import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import { Chart } from "react-google-charts";
-import { formatToLocalTime, formatToLocalDate } from "./helper";
+import { formatToLocalTime, formatToLocalDate, getDayName } from "./helper";
 
 const TodayForecast = ({ hourForecast }) => {
   let history = useHistory();
@@ -11,21 +11,21 @@ const TodayForecast = ({ hourForecast }) => {
     history.push("/weekforecast");
   };
 
-  let currentDate = new Date().toLocaleTimeString("hr-HR", {
-    hour: "numeric",
-    hour12: false,
-  });
-  console.log("Trenutni date" + currentDate);
+  // let currentDate = new Date().toLocaleTimeString("hr-HR", {
+  //   hour: "numeric",
+  //   hour12: false,
+  // });
+  // console.log("Trenutni date" + currentDate);
 
   var buildGraphDataArray = (hourForecast) => {
     const graphDataArray = [["Hour", "Temp"]];
 
     for (let i = 0; i < hourForecast.length; i++) {
-      console.log(
-        formatToLocalTime(hourForecast[i].dt_txt) +
-          " >>> " +
-          hourForecast[i].main.temp
-      );
+      // console.log(
+      //   formatToLocalTime(hourForecast[i].dt_txt) +
+      //     " >>> " +
+      //     hourForecast[i].main.temp
+      // );
       graphDataArray.push([
         formatToLocalTime(hourForecast[i].dt_txt) + "h",
         hourForecast[i].main.temp,
@@ -52,6 +52,7 @@ const TodayForecast = ({ hourForecast }) => {
       <main>
         <div className="icon">
           <h4>{formatToLocalDate(hourForecast[0].dt_txt)}</h4>
+          {getDayName(hourForecast[0].dt_txt, "hr-HR")}
         </div>
         <div className="week_section">
           <Chart

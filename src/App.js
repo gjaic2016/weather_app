@@ -9,18 +9,15 @@ import { getData } from "./service";
 import { formatToLocalDate } from "./helper";
 
 function App() {
-  console.log("app rendered");
   const [weather, setWeather] = useState();
   const [city, setCity] = useState("");
   const [hourForecast, setHourForecast] = useState();
 
   useEffect(() => {
-    console.log("usefect trigered");
-
     const fetchData = async () => {
       const data = await getData(city);
       setWeather(data);
-      // console.log("SORTED DATA: " + JSON.stringify(data));
+      
     };
     fetchData();
   }, [city, hourForecast]);
@@ -33,7 +30,7 @@ function App() {
 
   const searchOnClick = (e) => {
     // console.log("search onclick value" + JSON.stringify(value));
-    console.log("search onclick value" + e);
+    // console.log("search onclick value" + e);
     setCity(e);
   }
 
