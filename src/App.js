@@ -62,6 +62,7 @@ function App() {
               <WeekForecast
                 weather={weather}
                 filterOutSelectedForecast={filterOutSelectedForecast}
+                city={city}
               />
             </Route>
             <Route path="/todayforecast">

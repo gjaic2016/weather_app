@@ -2,7 +2,7 @@ import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import { Chart } from "react-google-charts";
-import { formatToLocalTime } from "./helper";
+import { formatToLocalTime, formatToLocalDate } from "./helper";
 
 const TodayForecast = ({ hourForecast }) => {
   let history = useHistory();
@@ -11,7 +11,10 @@ const TodayForecast = ({ hourForecast }) => {
     history.push("/weekforecast");
   };
 
-  let currentDate = new Date().toLocaleTimeString("hr-HR", { hour: "numeric", hour12: false });
+  let currentDate = new Date().toLocaleTimeString("hr-HR", {
+    hour: "numeric",
+    hour12: false,
+  });
   console.log("Trenutni date" + currentDate);
 
   var buildGraphDataArray = (hourForecast) => {
@@ -24,29 +27,32 @@ const TodayForecast = ({ hourForecast }) => {
           hourForecast[i].main.temp
       );
       graphDataArray.push([
-        formatToLocalTime(hourForecast[i].dt_txt)+"h",
+        formatToLocalTime(hourForecast[i].dt_txt) + "h",
         hourForecast[i].main.temp,
       ]);
     }
-    
+
     return graphDataArray;
   };
 
   const options = {
-    hAxis: { title: "Hour(h)"  },
+    hAxis: { title: "Hour(h)" },
     vAxis: { title: "Temperature(°C)" },
     chart: {
       title: "Hourly forecast",
-      subtitle: "in Celsius"
+      subtitle: "in Celsius",
     },
     pointSize: 6,
-    backgroundColor: 'white'
+    backgroundColor: "white",
   };
 
   return (
     <div>
       <FaArrowLeft className="goBackButton" onClick={goBack}></FaArrowLeft>
       <main>
+        <div className="icon">
+          <h4>{formatToLocalDate(hourForecast[0].dt_txt)}</h4>
+        </div>
         <div className="week_section">
           <Chart
             className="reactgoogleChart"

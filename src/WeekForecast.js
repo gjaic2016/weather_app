@@ -4,9 +4,9 @@ import { FaArrowLeft } from "react-icons/fa";
 import { iconURLBuilder } from "./service";
 import { formatToLocalDate, getDayName } from "./helper";
 
-const WeekForecast = ({ weather, filterOutSelectedForecast }) => {
-  const { lat, lon } = weather || {};
-  const mapUrl = `http://maps.google.com/maps?q=${lat}, ${lon}&z=15&output=embed`;
+const WeekForecast = ({ weather, filterOutSelectedForecast, city }) => {
+  
+  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${city}&zoom=12`;
 
   let history = useHistory();
 
@@ -27,7 +27,7 @@ const WeekForecast = ({ weather, filterOutSelectedForecast }) => {
             return (
               <div key={index} className="week_section_size section_week">
                 <button onClick={(e) => {
-                  // console.log(formatToLocalDate(item.dt_txt)); console.log(index);
+                  
                   console.log("selected day/date" + formatToLocalDate(item.dt_txt));
                   filterOutSelectedForecast(formatToLocalDate(item.dt_txt));
                   history.push("/todayforecast");
@@ -49,9 +49,9 @@ const WeekForecast = ({ weather, filterOutSelectedForecast }) => {
             );
           })}
         </div>
-        {/* <div className="section_week">
+        <div className="section_week">
           <iframe className="map" src={mapUrl} title="Map"></iframe>
-        </div> */}
+        </div>
       </main>
     </>
   );
