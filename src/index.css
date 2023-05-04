@@ -56,7 +56,6 @@ code {
 }
 
 .app-header {
-  background-color: #282c34;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -106,11 +105,6 @@ code {
   align-items: center;
   justify-content: center;
 }
-
-/* .searchForm label {
-  position: absolute;
-  left: -99999px;
-} */
 
 .searchForm input[type='text'] {
   flex-grow: 1;
@@ -178,7 +172,6 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin: 15px 15px 15px 15px; */
 }
 
 .section_additionaldata_icon {
@@ -197,7 +190,6 @@ code {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  /* flex-direction: column; */
   padding: 0.5rem;
 }
 
@@ -234,12 +226,6 @@ code {
   justify-content: center;
   /* background-color: var(--temp-background); */
 }
-
-/* @media (min-width:1024px) {
-  week_section {
-    flex-direction: column;
-  }
-} */
 
 ul {
   width: 100%;
@@ -328,14 +314,7 @@ button, input[type="submit"], input[type="reset"] {
   box-shadow: var(--section-box-shadow-dark);
 }
 
-.reactgoogleChart:hover{
-  background-color: red;
-  /* box-shadow: var(--section-box-shadow-hover); */
-}
-
-
 .faicons{
-  /* color: white; */
   height: 30px;
   width: 30px;
 }

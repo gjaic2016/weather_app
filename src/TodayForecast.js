@@ -11,21 +11,10 @@ const TodayForecast = ({ hourForecast }) => {
     history.push("/weekforecast");
   };
 
-  // let currentDate = new Date().toLocaleTimeString("hr-HR", {
-  //   hour: "numeric",
-  //   hour12: false,
-  // });
-  // console.log("Trenutni date" + currentDate);
-
   var buildGraphDataArray = (hourForecast) => {
     const graphDataArray = [["Hour", "Temp"]];
 
     for (let i = 0; i < hourForecast.length; i++) {
-      // console.log(
-      //   formatToLocalTime(hourForecast[i].dt_txt) +
-      //     " >>> " +
-      //     hourForecast[i].main.temp
-      // );
       graphDataArray.push([
         formatToLocalTime(hourForecast[i].dt_txt) + "h",
         hourForecast[i].main.temp,

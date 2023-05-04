@@ -7,8 +7,6 @@ import {GoogleMap, useLoadScript, Marker} from "@react-google-maps/api";
 
 const WeekForecast = ({ weather, filterOutSelectedForecast, city }) => {
   
-  // const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&q=${city}&zoom=12`;
-
   const {lat,lon} = weather;
 
   let history = useHistory();
@@ -43,8 +41,6 @@ const WeekForecast = ({ weather, filterOutSelectedForecast, city }) => {
             return (
               <div key={index} className="week_section_size section_week">
                 <button onClick={(e) => {
-                  
-                  // console.log("selected day/date" + formatToLocalDate(item.dt_txt));
                   filterOutSelectedForecast(formatToLocalDate(item.dt_txt));
                   history.push("/todayforecast");
                   }}>
@@ -67,7 +63,6 @@ const WeekForecast = ({ weather, filterOutSelectedForecast, city }) => {
         </div>
         <div className="section_week">
           <Map />;
-          {/* <iframe className="map" src={mapUrl} title="Map"></iframe> */}
         </div>
       </main>
     </>

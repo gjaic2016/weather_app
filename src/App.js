@@ -29,8 +29,6 @@ function App() {
   };
 
   const searchOnClick = (e) => {
-    // console.log("search onclick value" + JSON.stringify(value));
-    // console.log("search onclick value" + e);
     setCity(e);
   }
 
@@ -39,13 +37,6 @@ function App() {
       formatToLocalDate(item.dt_txt).includes(selectedDate)
     );
     setHourForecast(filteredDateHours);
-    
-    // console.log("APP JS filtered data" + JSON.stringify(filteredDateHours));
-    // for (let property in filteredDateHours) {
-    //   console.log(
-    //     `${property}:  ${filteredDateHours[property].dt_txt} >>> ${filteredDateHours[property].main.temp}`
-    //   );
-    // }
   };
 
   return (
