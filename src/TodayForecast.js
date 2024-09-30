@@ -36,22 +36,24 @@ const TodayForecast = ({ hourForecast }) => {
   };
 
   return (
-    <div>
+    <div className="today_forecast_container">
       <FaArrowLeft className="goBackButton" onClick={goBack}></FaArrowLeft>
       <main>
-        <div className="icon">
-          <h4>{formatToLocalDate(hourForecast[0].dt_txt)}</h4>
-          {getDayName(hourForecast[0].dt_txt, "hr-HR")}
-        </div>
-        <div className="week_section">
-          <Chart
-            className="reactgoogleChart"
-            chartType="LineChart"
-            width="100%"
-            height="500px"
-            data={buildGraphDataArray(hourForecast)}
-            options={options}
-          />
+        <div className="today_section">
+          <div className="icon">
+            <h4>{formatToLocalDate(hourForecast[0].dt_txt)}</h4>
+            {getDayName(hourForecast[0].dt_txt, "hr-HR")}
+          </div>
+          <div className="week_section">
+            <Chart
+              className="reactgoogleChart"
+              chartType="LineChart"
+              width="100%"
+              height="500px"
+              data={buildGraphDataArray(hourForecast)}
+              options={options}
+            />
+          </div>
         </div>
       </main>
     </div>

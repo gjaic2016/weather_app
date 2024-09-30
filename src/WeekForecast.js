@@ -33,7 +33,7 @@ const WeekForecast = ({ weather, filterOutSelectedForecast, city }) => {
   
 
   return (
-    <>
+    <div>
       <FaArrowLeft className="goBackButton" onClick={goBack}></FaArrowLeft>
       <main>
         <div className="week_section">
@@ -65,7 +65,7 @@ const WeekForecast = ({ weather, filterOutSelectedForecast, city }) => {
           <Map />;
         </div>
       </main>
-    </>
+    </div>
   );
 };
 
