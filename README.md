@@ -6,7 +6,7 @@ built with React, JS.
 Can enter city and check forecast, with daily and hourly temperature information.
 
 
-Try app at: [Weather app](https://weather-app2-abbuo57i9-gjaic23.vercel.app/)
+Try app at: [Weather app](https://weather-app2-psi.vercel.app/)
 
 
 How to use:
